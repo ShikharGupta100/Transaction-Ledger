@@ -1,6 +1,6 @@
 const express = require("express")
-const { Route } = require("react-router-dom")
 const authMiddleware = require("../middleware/auth.middleware")
+const accountController  = require("../controllers/account.controller")
 
 
 
@@ -12,7 +12,7 @@ const router = express.Router()
  * - Create a new account
  * - Protected Route
  */
-router.post("/",authMiddleware.authMiddleware)
+router.post("/",authMiddleware.authMiddleware,accountController.createAccountController)
 
 
 
