@@ -14,6 +14,19 @@ const router = express.Router()
  */
 router.post("/",authMiddleware.authMiddleware,accountController.createAccountController)
 
+/***
+ * -Get /api/accounts
+ * - Get all accounts of the logged in user
+ * - Protected Route
+ */
+router.get("/",authMiddleware.authMiddleware,accountController.getUserAccountController)
+
+
+/**
+ * - GET /api/accounts/balance/:accountId
+ */
+router.get("/balance/:accountId",authMiddleware.authMiddleware,accountController.getAccountBalanceController)
+
 
 
 module.exports = router
